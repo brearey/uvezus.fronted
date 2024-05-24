@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
-import {FirstComponentComponent} from "./first-component/first-component.component";
-import {SecondComponentComponent} from "./second-component/second-component.component";
+import {SplashScreenComponent} from "./splash-screen/splash-screen.component";
+import {PhoneScreenComponent} from "./phone-screen/phone-screen.component";
 
 export const routes: Routes = [
-  {path: '', redirectTo: 'first', pathMatch: 'full'},
-  {path: 'first', component: FirstComponentComponent},
-  {path: 'second', component: SecondComponentComponent},
+  {path: '', redirectTo: 'splash', pathMatch: 'full'},
+  {path: 'splash', component: SplashScreenComponent},
+  {path: 'phone', component: PhoneScreenComponent},
 ];

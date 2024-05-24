@@ -1,0 +1,16 @@
+* {
+  box-sizing: border-box;
+}
+.primary-color {
+  color: #008CCE;
+}
+.wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.app-name {
+  text-transform: uppercase;
+}
