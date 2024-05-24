@@ -14,3 +14,4 @@ Design and business logic here: https://www.figma.com/design/PbD6hdxqIEycA1iRWVA
 - [ ] Code SplashScreenComponent: ImageComponent for logo (logo in Figma)
 - [ ] Learn component for `input` and `button` with `SCSS`
 - [ ] Code PhoneScreenComponent: TextInputComponent, ButtonComponent
+- [ ] Setup GitHub actions
