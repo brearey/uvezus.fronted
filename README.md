@@ -8,6 +8,7 @@ Design and business logic here: https://www.figma.com/design/PbD6hdxqIEycA1iRWVA
 [x] Learn the angular routes
 [x] Create two components: SplashScreen, Phone Screen
 [x] Layout SplashScreen
+[ ] Layout Phone Screen
 [ ] Setup routing between these components
 [ ] Learn component for <img src=""> with SCSS
 [ ] Code SplashScreenComponent: ImageComponent for logo (logo in Figma)
