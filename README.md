@@ -10,10 +10,10 @@ Design and business logic here: https://www.figma.com/design/PbD6hdxqIEycA1iRWVA
 - [x] Learn the angular routes
 - [x] Create two components: SplashScreen, Phone Screen
 - [x] Layout SplashScreen
-- [ ] Layout Phone Screen
-- [ ] Setup routing between these components
-- [ ] Learn component for `<img src="">` with `SCSS`
-- [ ] Code SplashScreenComponent: ImageComponent for logo (logo in Figma)
+- [x] Layout Phone Screen
+- [x] Setup routing between these components
+- [x] Learn component for `<img src="">` with `SCSS`
+- [x] Code SplashScreenComponent: ImageComponent for logo (logo in Figma)
 - [ ] Learn component for `input` and `button` with `SCSS`
 - [ ] Code PhoneScreenComponent: TextInputComponent, ButtonComponent
 - [ ] Setup GitHub actions
