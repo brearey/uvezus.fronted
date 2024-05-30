@@ -20,4 +20,10 @@ export class PhoneScreenComponent {
     this.appName = appService.appName;
     this.appSlogan = appService.appSlogan;
   }
+
+  public getCode():number {
+    const code = Math.floor(Math.random() * 10)
+    console.log(code)
+    return code
+  }
 }
