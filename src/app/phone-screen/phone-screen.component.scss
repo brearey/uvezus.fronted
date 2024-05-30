@@ -1,8 +1,9 @@
+$base-color: #008CCE;
 * {
   box-sizing: border-box;
 }
 .primary-color {
-  color: #008CCE;
+  color: $base-color;
 }
 .wrapper {
   height: 100vh;
@@ -19,10 +20,32 @@
   padding: 16px;
   font-size: 18px;
   text-align: center;
-  border: 1px solid #008CCE;
+  border: 1px solid $base-color;
   border-radius: 4px;
+  margin-bottom: 12px;
 }
 .input-tel:focus {
-  border: 1px solid #008CCE;
+  border: 1px solid $base-color;
   outline: none;
+}
+
+.get-code-button {
+  display: block;
+  width: 100%;
+  padding: 16px 0;
+  background-color: $base-color;
+  color: white;
+  font-size: 18px;
+  text-transform: uppercase;
+  border: 1px solid $base-color;
+  border-radius: 4px;
+  transition: .2s;
+}
+
+.get-code-button:hover {
+  background-color: gray;
+}
+
+.get-code-button:active {
+  transform: scaleX(1.05);
 }
