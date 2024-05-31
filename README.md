@@ -14,6 +14,10 @@ Design and business logic here: https://www.figma.com/design/PbD6hdxqIEycA1iRWVA
 - [x] Setup routing between these components
 - [x] Learn component for `<img src="">` with `SCSS`
 - [x] Code SplashScreenComponent: ImageComponent for logo (logo in Figma)
-- [ ] Learn component for `input` and `button` with `SCSS`
+- [x] Learn component for `input` and `button` with `SCSS`
+- [x] Real challenge with phone code Есть смс центры типа sms.ru smsc.ru - платные тарифы. Так что пока без авторизации через СМС
+- [ ] phone screen delete
+- [ ] Layout email screen
+- [ ] Real challenge with email code (nodemailer)
 - [ ] Code PhoneScreenComponent: TextInputComponent, ButtonComponent
 - [ ] Setup GitHub actions
