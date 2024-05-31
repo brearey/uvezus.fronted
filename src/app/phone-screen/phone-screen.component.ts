@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {NgOptimizedImage} from "@angular/common";
 import {AppService} from "../app.service";
+import {PhoneCodeService} from "./phone-code.service";
 
 @Component({
   selector: 'app-phone-screen',
@@ -15,14 +16,18 @@ export class PhoneScreenComponent {
   appDesc: string
   appName: string
   appSlogan: string
-  constructor(appService: AppService) {
+
+  phoneCodeService: PhoneCodeService
+
+  constructor(appService: AppService, phoneCodeService: PhoneCodeService) {
     this.appDesc = appService.appDesc;
     this.appName = appService.appName;
     this.appSlogan = appService.appSlogan;
+    this.phoneCodeService = phoneCodeService
   }
 
-  public getCode():number {
-    const code = Math.floor(Math.random() * 10)
+  public getCode():string {
+    const code = this.phoneCodeService.getPhoneCode('89246628934')
     console.log(code)
     return code
   }
