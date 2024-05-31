@@ -19,5 +19,5 @@ Design and business logic here: https://www.figma.com/design/PbD6hdxqIEycA1iRWVA
 - [ ] phone screen delete
 - [ ] Layout email screen
 - [ ] Real challenge with email code (nodemailer)
-- [ ] Code PhoneScreenComponent: TextInputComponent, ButtonComponent
+- [ ] Code EmailScreenComponent: TextInputComponent, ButtonComponent
 - [ ] Setup GitHub actions

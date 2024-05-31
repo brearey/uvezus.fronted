@@ -1,0 +1,11 @@
+<div class="wrapper">
+  <h2 class="app-desc">{{appDesc}}</h2>
+  <h1 class="app-name primary-color">{{appName}}</h1>
+  <div class="app-logo">
+    <img priority="1" ngSrc="../../../assets/logo.png" alt="app logo" height="128" width="128">
+  </div>
+  <div class="form">
+    <input class="input-email" type="email" placeholder="Введите вашу почту" id="email" name="email" required ngModel="inputEmail">
+    <button class="get-code-button" (click)="getCode(inputEmail)">Получить код</button>
+  </div>
+</div>

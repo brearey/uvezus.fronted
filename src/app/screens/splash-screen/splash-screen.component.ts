@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {NgOptimizedImage} from "@angular/common";
-import {AppService} from "../app.service";
+import {AppService} from "../../app.service";
 import {Router} from "@angular/router";
 
 @Component({
@@ -23,7 +23,7 @@ export class SplashScreenComponent implements OnInit{
   }
 
   async gotoPhoneScreen () {
-    await this.__router.navigateByUrl('/phone')
+    await this.__router.navigateByUrl('/email')
   }
 
   ngOnInit(): void {

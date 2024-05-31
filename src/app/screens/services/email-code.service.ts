@@ -3,12 +3,12 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class PhoneCodeService {
+export class EmailCodeService {
 
   constructor() { }
 
-  public getPhoneCode(phoneNumber: string): string {
-    return `code for ${phoneNumber}`
+  public getCode(email: string): string {
+    return `code for ${email}`
   }
 
   public checkCode(code: string): boolean {
