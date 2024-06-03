@@ -18,6 +18,7 @@ export class EmailScreenComponent {
   appDesc: string
   appName: string
   appSlogan: string
+  inputName: string = ''
 
   emailCodeService: EmailCodeService
 
@@ -28,8 +29,8 @@ export class EmailScreenComponent {
     this.emailCodeService = emailCodeService
   }
 
-  public getCode(email: string):string {
-    const code = this.emailCodeService.getCode(email)
+  public getCode():string {
+    const code = this.emailCodeService.getCode(this.inputName)
     console.log(code)
     return code
   }
