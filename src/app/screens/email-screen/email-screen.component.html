@@ -5,7 +5,14 @@
     <img priority="1" ngSrc="../../../assets/logo.png" alt="app logo" height="128" width="128">
   </div>
   <div class="form">
-    <input class="input-email" type="email" placeholder="Введите вашу почту" id="email" name="email" required ngModel="inputEmail">
-    <button class="get-code-button" (click)="getCode()">Получить код</button>
+    <p>Ваша почта:</p>
+    <input class="input" type="email" placeholder="Введите вашу почту" id="email" name="email" required
+      ngModel="inputEmail">
+    <button class="button" (click)="getCode()">Получить код</button>
+    <div class="enter-code-wrapper">
+      <input class="input" type="password" placeholder="Введите полученный код" id="code" name="code" required
+        ngModel="inputCode">
+      <button class="success-bg-color button" (click)="checkCode()">Вход</button>
+    </div>
   </div>
 </div>

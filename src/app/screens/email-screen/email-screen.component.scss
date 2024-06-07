@@ -1,9 +1,13 @@
-$base-color: #008CCE;
+$base-color: #008cce;
 * {
   box-sizing: border-box;
 }
 .primary-color {
   color: $base-color;
+}
+.success-bg-color {
+  background: #158424;
+  color: white;
 }
 .wrapper {
   height: 100vh;
@@ -15,7 +19,7 @@ $base-color: #008CCE;
 .app-name {
   text-transform: uppercase;
 }
-.input-email {
+.input {
   min-width: 320px;
   padding: 16px;
   font-size: 18px;
@@ -24,12 +28,12 @@ $base-color: #008CCE;
   border-radius: 4px;
   margin-bottom: 12px;
 }
-.input-email:focus {
+.input:focus {
   border: 1px solid $base-color;
   outline: none;
 }
 
-.get-code-button {
+.button {
   display: block;
   width: 100%;
   padding: 16px 0;
@@ -39,13 +43,13 @@ $base-color: #008CCE;
   text-transform: uppercase;
   border: 1px solid $base-color;
   border-radius: 4px;
-  transition: .2s;
+  transition: 0.2s;
 }
 
-.get-code-button:hover {
+.button:hover {
   background-color: gray;
 }
 
-.get-code-button:active {
+.button:active {
   transform: scaleX(1.05);
 }

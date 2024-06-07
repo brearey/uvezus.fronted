@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import {NgOptimizedImage} from "@angular/common";
-import {AppService} from "../../app.service";
-import {EmailCodeService} from "../services/email-code.service";
-import {FormsModule} from "@angular/forms";
+import { NgOptimizedImage } from "@angular/common";
+import { AppService } from "../../app.service";
+import { EmailCodeService } from "../services/email-code.service";
+import { FormsModule } from "@angular/forms";
 
 @Component({
   selector: 'app-email-screen',
@@ -29,9 +29,15 @@ export class EmailScreenComponent {
     this.emailCodeService = emailCodeService
   }
 
-  public getCode():string {
+  public getCode(): string {
     const code = this.emailCodeService.getCode(this.inputName)
     console.log(code)
     return code
+  }
+
+  public checkCode(): void {
+    //TODO: check code and sign in
+    console.log('sign in');
+
   }
 }
