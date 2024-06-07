@@ -1,12 +1,14 @@
 $base-color: #008cce;
+$success-color: #158424;
 * {
   box-sizing: border-box;
 }
 .primary-color {
-  color: $base-color;
+  background-color: $base-color;
+  color: white;
 }
-.success-bg-color {
-  background: #158424;
+.success-color {
+  background: $success-color;
   color: white;
 }
 .wrapper {
@@ -37,13 +39,12 @@ $base-color: #008cce;
   display: block;
   width: 100%;
   padding: 16px 0;
-  background-color: $base-color;
-  color: white;
   font-size: 18px;
   text-transform: uppercase;
   border: 1px solid $base-color;
   border-radius: 4px;
   transition: 0.2s;
+  margin-bottom: 12px;
 }
 
 .button:hover {

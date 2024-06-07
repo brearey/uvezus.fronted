@@ -1,18 +1,17 @@
 <div class="wrapper">
   <h2 class="app-desc">{{appDesc}}</h2>
-  <h1 class="app-name primary-color">{{appName}}</h1>
+  <h1 class="app-name">{{appName}}</h1>
   <div class="app-logo">
     <img priority="1" ngSrc="../../../assets/logo.png" alt="app logo" height="128" width="128">
   </div>
   <div class="form">
     <p>Ваша почта:</p>
-    <input class="input" type="email" placeholder="Введите вашу почту" id="email" name="email" required
-      ngModel="inputEmail">
-    <button class="button" (click)="getCode()">Получить код</button>
+    <input class="input" type="email" placeholder="Введите вашу почту" id="email" name="email" required>
+    <button class="button primary-color" (click)="getCode()">Получить код</button>
     <div class="enter-code-wrapper">
-      <input class="input" type="password" placeholder="Введите полученный код" id="code" name="code" required
-        ngModel="inputCode">
-      <button class="success-bg-color button" (click)="checkCode()">Вход</button>
+      <p>Введите полученный код:</p>
+      <input class="input" type="password" id="code" name="code" required>
+      <button class="button success-color" (click)="checkCode()">Вход</button>
     </div>
   </div>
 </div>
