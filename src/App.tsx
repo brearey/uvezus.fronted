@@ -1,11 +1,12 @@
 import './App.css'
+import { SplashScreen } from './pages/splash-screen'
 
 function App() {
-  return (
-    <>
-      <h1>Hello wow</h1>
-    </>
-  )
+    return (
+        <>
+            <SplashScreen />
+        </>
+    )
 }
 
 export default App
