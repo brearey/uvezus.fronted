@@ -1,6 +1,6 @@
 # UvezusFrontend
 
-This pet project for learn frontend technologies as Angular
+This pet project for learn frontend technologies as React
 
 ## Design
 
@@ -8,17 +8,14 @@ Design and business logic here: https://www.figma.com/design/PbD6hdxqIEycA1iRWVA
 
 ## TODO LIST:
 
-- [ ] Learn the angular routes
-- [ ] Create two components: SplashScreen, Phone Screen
+- [ ] Learn the react routes
+- [ ] Create two components: SplashScreen, Email Screen
 - [ ] Layout SplashScreen
-- [ ] Layout Phone Screen
+- [ ] Layout Email Screen
 - [ ] Setup routing between these components
-- [ ] Learn component for `<img src="">` with `SCSS`
-- [ ] Code SplashScreenComponent: ImageComponent for logo (logo in Figma)
-- [ ] Learn component for `input` and `button` with `SCSS`
 - [ ] Real challenge with phone code Есть смс центры типа sms.ru smsc.ru - платные тарифы. Так что пока без авторизации через СМС
-- [ ] phone screen delete
 - [ ] Layout email screen
-- [ ] Real challenge with email code (nodemailer)
-- [ ] Code EmailScreenComponent: TextInputComponent, ButtonComponent
+- [ ] Real challenge with email code (nodemailer) in backend
+- [ ] Code EmailScreen
+- [ ] useInput hook
 - [ ] Setup GitHub actions
