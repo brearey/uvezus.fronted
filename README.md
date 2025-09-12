@@ -1,69 +1,24 @@
-# React + TypeScript + Vite
+# UvezusFrontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This pet project for learn frontend technologies as Angular
 
-Currently, two official plugins are available:
+## Design
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Design and business logic here: https://www.figma.com/design/PbD6hdxqIEycA1iRWVALc6/Uvezus-web-application?node-id=0%3A1&t=bQvk4JSqse7AQqqs-1
 
-## Expanding the ESLint configuration
+## TODO LIST:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- [ ] Learn the angular routes
+- [ ] Create two components: SplashScreen, Phone Screen
+- [ ] Layout SplashScreen
+- [ ] Layout Phone Screen
+- [ ] Setup routing between these components
+- [ ] Learn component for `<img src="">` with `SCSS`
+- [ ] Code SplashScreenComponent: ImageComponent for logo (logo in Figma)
+- [ ] Learn component for `input` and `button` with `SCSS`
+- [ ] Real challenge with phone code Есть смс центры типа sms.ru smsc.ru - платные тарифы. Так что пока без авторизации через СМС
+- [ ] phone screen delete
+- [ ] Layout email screen
+- [ ] Real challenge with email code (nodemailer)
+- [ ] Code EmailScreenComponent: TextInputComponent, ButtonComponent
+- [ ] Setup GitHub actions
