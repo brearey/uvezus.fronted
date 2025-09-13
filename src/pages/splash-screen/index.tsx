@@ -10,7 +10,7 @@ function SplashScreen() {
 		setTimeout(() => {
 			navigate('/email')
 		}, 1000)
-	}, [])
+	}, [navigate])
 
 	return (
 		<div className="container">

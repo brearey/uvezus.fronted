@@ -6,15 +6,17 @@ import uvezusLogo from '../../assets/logo.svg'
 
 export function EmailScreen() {
 	const navigate = useNavigate()
-	const [btnEnabled, setBtnEnabled] = useState(true)
+	const [getCodeBtnDisabled, setGetCodeBtnDisabled] = useState(false)
+	const [signInBtnDisabled, setSignInBtnDisabled] = useState(false)
 	const emailInput = useInput('')
+	const codeInput = useInput('')
 
 	return (
 		<div className="container">
 			<div>
 				<img src={uvezusLogo} alt="uvezus logo" />
 			</div>
-			<div>
+			<div className="section">
 				<label htmlFor="email">Your email</label>
 				<br />
 				<input
@@ -25,7 +27,23 @@ export function EmailScreen() {
 					onChange={emailInput.onChange}
 				/>
 				<br />
-				<button disabled={btnEnabled}>Get code</button>
+				<button className="btn" disabled={getCodeBtnDisabled}>
+					Get code
+				</button>
+			</div>
+			<div className="section">
+				<label htmlFor="code">Write your code here:</label>
+				<input
+					id="code"
+					type="text"
+					placeholder="your code..."
+					value={emailInput.value}
+					onChange={emailInput.onChange}
+				/>
+				<br />
+				<button className="btn" disabled={signInBtnDisabled}>
+					Sign in
+				</button>
 			</div>
 		</div>
 	)
