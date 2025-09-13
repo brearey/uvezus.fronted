@@ -1,6 +1,7 @@
 import { useState, type ChangeEvent } from 'react'
 import { useNavigate } from 'react-router'
 import { useInput } from '../../hooks/use-input'
+import { useDebounce } from '../../hooks/use-debounce'
 import './email-screen-module.css'
 import uvezusLogo from '../../assets/logo.svg'
 import { validateEmail } from '../../util/email'
@@ -12,15 +13,12 @@ export function EmailScreen() {
 	const [signInBtnDisabled, setSignInBtnDisabled] = useState(true)
 	const emailInput = useInput('')
 	const codeInput = useInput('')
+	const debouncedBtnChange = useDebounce(setGetCodeBtnDisabled, 500)
 
 	function onEmailChanged(event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
 		emailInput.onChange(event)
-		// TODO: useDebounce here
-		if (validateEmail(emailInput.value)) {
-			setGetCodeBtnDisabled(false)
-		} else {
-			setGetCodeBtnDisabled(true)
-		}
+		const emailIsValid = validateEmail(emailInput.value)
+		debouncedBtnChange(!emailIsValid)
 	}
 
 	function getCode() {
