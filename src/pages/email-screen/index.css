@@ -13,6 +13,7 @@ input {
 	padding: var(--button-padding);
 	text-align: center;
 	width: 100%;
+	font-size: var(--font-size);
 }
 
 .section {

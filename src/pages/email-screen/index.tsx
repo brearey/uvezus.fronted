@@ -33,13 +33,7 @@ export function EmailScreen() {
 			</div>
 			<div className="section">
 				<label htmlFor="code">Write your code here:</label>
-				<input
-					id="code"
-					type="text"
-					placeholder="your code..."
-					value={emailInput.value}
-					onChange={emailInput.onChange}
-				/>
+				<input id="code" type="text" placeholder="your code..." value={codeInput.value} onChange={codeInput.onChange} />
 				<br />
 				<button className="btn" disabled={signInBtnDisabled}>
 					Sign in
