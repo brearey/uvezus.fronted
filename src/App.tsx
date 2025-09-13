@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router'
-import { EmailScreen } from './pages/email-screen'
+import { EmailScreen } from './pages/email-screen/email-screen'
 import { SplashScreen } from './pages/splash-screen'
 import './App.css'
 

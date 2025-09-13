@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router'
 import { useInput } from '../../hooks/use-input'
-import './index.css'
+import './email-screen-module.css'
 import uvezusLogo from '../../assets/logo.svg'
+import { validateEmail } from '../../util/email'
 
 export function EmailScreen() {
 	const navigate = useNavigate()
@@ -10,6 +11,14 @@ export function EmailScreen() {
 	const [signInBtnDisabled, setSignInBtnDisabled] = useState(false)
 	const emailInput = useInput('')
 	const codeInput = useInput('')
+
+	function getCode() {
+		if (validateEmail(emailInput.value)) {
+			console.log(true)
+		} else {
+			console.log(false)
+		}
+	}
 
 	return (
 		<div className="container">
@@ -27,7 +36,7 @@ export function EmailScreen() {
 					onChange={emailInput.onChange}
 				/>
 				<br />
-				<button className="btn" disabled={getCodeBtnDisabled}>
+				<button onClick={getCode} className="btn" disabled={getCodeBtnDisabled}>
 					Get code
 				</button>
 			</div>
