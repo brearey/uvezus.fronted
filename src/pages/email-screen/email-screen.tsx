@@ -15,7 +15,9 @@ export function EmailScreen() {
 	const codeInput = useInput('')
 	const debouncedBtnChange = useDebounce(setGetCodeBtnDisabled, 500)
 
-	function onEmailChanged(event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
+	function onEmailChanged(
+		event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+	) {
 		emailInput.onChange(event)
 		const emailIsValid = validateEmail(emailInput.value)
 		debouncedBtnChange(!emailIsValid)
@@ -34,7 +36,13 @@ export function EmailScreen() {
 			<div className="section">
 				<label htmlFor="email">Your email</label>
 				<br />
-				<input id="email" type="email" placeholder="your@email.ru" value={emailInput.value} onChange={onEmailChanged} />
+				<input
+					id="email"
+					type="email"
+					placeholder="your@email.ru"
+					value={emailInput.value}
+					onChange={onEmailChanged}
+				/>
 				<br />
 				<button onClick={getCode} className="btn" disabled={getCodeBtnDisabled}>
 					Get code
@@ -42,7 +50,13 @@ export function EmailScreen() {
 			</div>
 			<div className="section">
 				<label htmlFor="code">Write your code here:</label>
-				<input id="code" type="text" placeholder="your code..." value={codeInput.value} onChange={codeInput.onChange} />
+				<input
+					id="code"
+					type="text"
+					placeholder="your code..."
+					value={codeInput.value}
+					onChange={codeInput.onChange}
+				/>
 				<br />
 				<button className="btn" disabled={signInBtnDisabled}>
 					Sign in

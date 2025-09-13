@@ -10,9 +10,12 @@ interface UseInputReturn {
 export function useInput(initialValue: string = ''): UseInputReturn {
 	const [value, setValue] = useState<string>(initialValue)
 
-	const onChange = useCallback((event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-		setValue(event.target.value)
-	}, [])
+	const onChange = useCallback(
+		(event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+			setValue(event.target.value)
+		},
+		[]
+	)
 
 	const reset = useCallback(() => {
 		setValue(initialValue)
