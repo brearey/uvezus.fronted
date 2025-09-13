@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router'
-import './index.css'
+import './splash-screen-module.css'
 import uvezusLogo from '../../assets/logo.svg'
 
 function SplashScreen() {

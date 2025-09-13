@@ -2,6 +2,7 @@
 	--margin-vertical: 8px;
 	--button-padding: 8px 0;
 	--white: #fff;
+	--black: #000;
 	--grey: #ccc;
 	--accent-color: #008cce;
 	--accent-color-light: #54b1dc;
@@ -9,6 +10,7 @@
 	--shadow-medium: 0 4px;
 	--shadow-small: 0 2px;
 	--btn-active-translate: 4px;
+	--max-width: 420px;
 }
 
 * {

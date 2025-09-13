@@ -4,6 +4,8 @@ import { useInput } from '../../hooks/use-input'
 import './email-screen-module.css'
 import uvezusLogo from '../../assets/logo.svg'
 import { validateEmail } from '../../util/email'
+import { Toast } from '../../components/toast/toast'
+import { type Toast as ToastType } from '../../types/toast-types'
 
 export function EmailScreen() {
 	const navigate = useNavigate()
@@ -20,8 +22,15 @@ export function EmailScreen() {
 		}
 	}
 
+	const toastParams : ToastType = {
+		message: 'opowd dwdpowodwpdpor propeor oeproer eproperpo',
+		messageType: 'warning',
+		delay: 2
+	}
+
 	return (
 		<div className="container">
+			<Toast toast={toastParams}></Toast>
 			<div>
 				<img src={uvezusLogo} alt="uvezus logo" />
 			</div>

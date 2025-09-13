@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router'
 import { EmailScreen } from './pages/email-screen/email-screen'
-import { SplashScreen } from './pages/splash-screen'
+import { SplashScreen } from './pages/splash-screen/splash-screen'
 import './App.css'
 
 function App() {
