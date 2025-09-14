@@ -1,6 +1,7 @@
 import { useState, type ChangeEvent } from 'react'
 import { useNavigate } from 'react-router'
 import { toast } from 'react-toastify'
+import { AxiosError } from 'axios'
 import { useInput } from '../../hooks/use-input'
 import { useDebounce } from '../../hooks/use-debounce'
 import { useEmail } from '../../http/useEmail'
@@ -16,9 +17,12 @@ export function EmailScreen() {
 	const codeInput = useInput('')
 	const debouncedGetCode = useDebounce(setGetCodeBtnDisabled, 500)
 	const debouncedSignIn = useDebounce(setSignInBtnDisabled, 300)
-	const getCodeMutation = useEmail(() => {
-		toast.success('Code sended')
-	})
+	const getCodeMutation = useEmail(
+		() => toast.success('Code sended'),
+		(e) => {
+			toast.error(e instanceof AxiosError ? e.message : 'Unknown error')
+		},
+	)
 
 	function getCode() {
 		getCodeMutation.mutate({ email: emailInput.value })
@@ -78,7 +82,8 @@ export function EmailScreen() {
 				<label htmlFor="code">Write your code here:</label>
 				<input
 					id="code"
-					type="number"
+					type="text"
+					maxLength={4}
 					placeholder="your code..."
 					value={codeInput.value}
 					onChange={onCodeChanged}
