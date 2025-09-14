@@ -1,12 +1,16 @@
-import { Routes, Route } from 'react-router'
+import { Routes, Route, BrowserRouter } from 'react-router'
 import { EmailScreen } from './pages/email-screen/email-screen'
 import { SplashScreen } from './pages/splash-screen/splash-screen'
 import { ToastContainer } from 'react-toastify'
+import { QueryClientProvider, QueryClient } from '@tanstack/react-query'
 import './App.css'
+
+const queryClient = new QueryClient()
 
 function App() {
 	return (
-		<>
+		<QueryClientProvider client={queryClient}>
+			<BrowserRouter>
 			<ToastContainer
 				position="bottom-center"
 				autoClose={2000}
@@ -24,7 +28,8 @@ function App() {
 				<Route path="/" element={<SplashScreen />} />
 				<Route path="/email" element={<EmailScreen />} />
 			</Routes>
-		</>
+		</BrowserRouter>
+		</QueryClientProvider>
 	)
 }
 
