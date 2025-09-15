@@ -23,9 +23,9 @@ export function EmailScreen() {
 	const debouncedGetCode = useDebounce(setGetCodeBtnDisabled, 500)
 	const debouncedSignIn = useDebounce(setSignInBtnDisabled, 300)
 	const getCodeMutation = useEmail(
-		() => toast.success('Code sended'),
+		() => toast.success('Код отправлен на вашу почту'),
 		(e) => {
-			toast.error(e instanceof AxiosError ? e.message : 'Unknown error')
+			toast.error(e instanceof AxiosError ? e.message : 'Что-то пошло не так')
 		}
 	)
 	const codeTimer = useTimer(TIMER_SECONDS, {
@@ -63,17 +63,17 @@ export function EmailScreen() {
 		} else {
 			setSignInBtnDisabled(true)
 			codeInput.reset()
-			toast.error('Your code is not valid')
+			toast.error('Ваш код неверный')
 		}
 	}
 
 	return (
-		<div className="container">
+		<div className="container jc-center">
 			<div>
 				<img src={uvezusLogo} alt="uvezus logo" />
 			</div>
 			<div className="section">
-				<label htmlFor="email">Your email</label>
+				<label htmlFor="email">Введите вашу почту:</label>
 				<br />
 				<input
 					id="email"
@@ -83,14 +83,14 @@ export function EmailScreen() {
 					onChange={onEmailChanged}
 				/>
 				<div className="resend-text-wrapper">
-					<span>Send code again in {codeTimer.seconds} sec</span>
+					<span>Отправить код повторно через {codeTimer.seconds} сек.</span>
 				</div>
 				<button onClick={getCode} className="btn" disabled={getCodeBtnDisabled}>
-					Get code
+					Получить код
 				</button>
 			</div>
 			<div className="section">
-				<label htmlFor="code">Write your code here:</label>
+				<label htmlFor="code">Введите полученный код здесь:</label>
 				<input
 					id="code"
 					type="text"
@@ -101,7 +101,7 @@ export function EmailScreen() {
 				/>
 				<br />
 				<button onClick={signIn} className="btn" disabled={signInBtnDisabled}>
-					Sign in
+					Войти
 				</button>
 			</div>
 		</div>

@@ -14,7 +14,7 @@ function SplashScreen() {
 	}, [navigate])
 
 	return (
-		<div className="container">
+		<div className="container jc-center">
 			<div>
 				<span>
 					<b>Веб приложение</b>
