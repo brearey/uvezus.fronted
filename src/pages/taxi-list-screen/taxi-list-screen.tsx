@@ -23,7 +23,7 @@ export function TaxiListScreen() {
 					</div>
 				</div>
 				<div className="right">
-					<span className='address'>с. Чапаево, ул. Николаева 27/2</span>
+					<span className="address">с. Чапаево, ул. Николаева 27/2</span>
 				</div>
 			</div>
 		</div>
