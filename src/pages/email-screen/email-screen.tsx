@@ -40,20 +40,16 @@ export function EmailScreen() {
 		event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
 	) {
 		codeInput.onChange(event)
-		debouncedSignIn(() => {
-			if (codeInput.value.length >= 4 && getCodeMutation.isSuccess) {
-				setSignInBtnDisabled(false)
-			}
-		})
+		const success = event.target.value.length >= 4 && getCodeMutation.isSuccess
+		debouncedSignIn(!success)
 	}
 
 	function signIn() {
-		console.log(codeInput.value)
-		console.log(getCodeMutation.data?.data.code)
-
 		if (codeInput.value == getCodeMutation.data?.data?.code) {
 			navigate('/') // TODO: navigate('/main')
 		} else {
+			setSignInBtnDisabled(true)
+			codeInput.reset()
 			toast.error('Your code is not valid')
 		}
 	}
