@@ -11,6 +11,7 @@
 		"format": "prettier --log-level warn --cache --write '{src/**/*,*}.{ts,tsx,js,jsx,json,yml,scss}' '!**{node_modules,dist}/**/*'"
 	},
 	"dependencies": {
+		"@siberiacancode/reactuse": "^0.2.32",
 		"@tanstack/react-query": "^5.87.4",
 		"axios": "^1.12.1",
 		"react": "^19.1.1",

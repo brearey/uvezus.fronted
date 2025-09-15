@@ -2,6 +2,7 @@ import { useState, type ChangeEvent } from 'react'
 import { useNavigate } from 'react-router'
 import { toast } from 'react-toastify'
 import { AxiosError } from 'axios'
+import { useTimer } from '@siberiacancode/reactuse'
 import { useInput } from '../../hooks/use-input'
 import { useDebounce } from '../../hooks/use-debounce'
 import { useEmail } from '../../http/useEmail'
@@ -23,9 +24,15 @@ export function EmailScreen() {
 			toast.error(e instanceof AxiosError ? e.message : 'Unknown error')
 		},
 	)
+	const codeTimer = useTimer(5, {
+		onExpire: () => { setGetCodeBtnDisabled(false) },
+		immediately: false
+	})
 
 	function getCode() {
 		getCodeMutation.mutate({ email: emailInput.value })
+		setGetCodeBtnDisabled(true)
+		codeTimer.start()
 	}
 
 	function onEmailChanged(
@@ -69,7 +76,9 @@ export function EmailScreen() {
 					value={emailInput.value}
 					onChange={onEmailChanged}
 				/>
-				<br />
+				<div className='resend-text-wrapper'>
+					<span>Send code again in {codeTimer.seconds} sec</span>
+				</div>
 				<button onClick={getCode} className="btn" disabled={getCodeBtnDisabled}>
 					Get code
 				</button>

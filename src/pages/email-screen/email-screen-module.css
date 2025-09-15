@@ -20,3 +20,12 @@ input {
 	width: 80%;
 	margin: 16px auto;
 }
+
+.resend-text-wrapper {
+	color: var(--grey);
+	text-align: center;
+}
+
+.resend-text-wrapper span {
+	font-size: 1rem;
+}
