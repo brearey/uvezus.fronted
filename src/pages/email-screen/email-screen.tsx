@@ -25,7 +25,7 @@ export function EmailScreen() {
 		},
 	)
 	const codeTimer = useTimer(5, {
-		onExpire: () => { setGetCodeBtnDisabled(false) },
+		onExpire: () => { setGetCodeBtnDisabled(!validateEmail(emailInput.value)) },
 		immediately: false
 	})
 
