@@ -9,6 +9,6 @@ export function useEmail(onSuccess: () => void, onError: (e: Error) => void) {
 		onSuccess,
 		onError: (e) => {
 			onError(e)
-		}
+		},
 	})
 }

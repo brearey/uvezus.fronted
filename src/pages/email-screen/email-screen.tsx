@@ -10,6 +10,9 @@ import { validateEmail } from '../../util/email'
 import uvezusLogo from '../../assets/logo.svg'
 import './email-screen-module.css'
 
+const TIMER_SECONDS = 60
+const CODE_MAX_LENGTH = 4
+
 export function EmailScreen() {
 	const navigate = useNavigate()
 	const [getCodeBtnDisabled, setGetCodeBtnDisabled] = useState(true)
@@ -22,11 +25,13 @@ export function EmailScreen() {
 		() => toast.success('Code sended'),
 		(e) => {
 			toast.error(e instanceof AxiosError ? e.message : 'Unknown error')
-		},
+		}
 	)
-	const codeTimer = useTimer(5, {
-		onExpire: () => { setGetCodeBtnDisabled(!validateEmail(emailInput.value)) },
-		immediately: false
+	const codeTimer = useTimer(TIMER_SECONDS, {
+		onExpire: () => {
+			setGetCodeBtnDisabled(!validateEmail(emailInput.value))
+		},
+		immediately: false, // отключаем автомат. запуск
 	})
 
 	function getCode() {
@@ -39,7 +44,7 @@ export function EmailScreen() {
 		event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
 	) {
 		emailInput.onChange(event)
-		const emailIsValid = validateEmail(emailInput.value)
+		const emailIsValid = validateEmail(event.target.value)
 		debouncedGetCode(!emailIsValid)
 	}
 
@@ -76,7 +81,7 @@ export function EmailScreen() {
 					value={emailInput.value}
 					onChange={onEmailChanged}
 				/>
-				<div className='resend-text-wrapper'>
+				<div className="resend-text-wrapper">
 					<span>Send code again in {codeTimer.seconds} sec</span>
 				</div>
 				<button onClick={getCode} className="btn" disabled={getCodeBtnDisabled}>
@@ -88,7 +93,7 @@ export function EmailScreen() {
 				<input
 					id="code"
 					type="text"
-					maxLength={4}
+					maxLength={CODE_MAX_LENGTH}
 					placeholder="your code..."
 					value={codeInput.value}
 					onChange={onCodeChanged}
