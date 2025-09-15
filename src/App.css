@@ -23,6 +23,17 @@ body {
 	background-color: var(--grey);
 }
 
+.container {
+	max-width: var(--max-width);
+	margin: 0 auto;
+	background: var(--white);
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
 .btn {
 	padding: var(--button-padding);
 	cursor: pointer;
@@ -59,4 +70,8 @@ body {
 .btn:disabled:active {
 	transform: none;
 	box-shadow: var(--shadow-medium) var(--grey);
+}
+
+img {
+	user-select: none;
 }

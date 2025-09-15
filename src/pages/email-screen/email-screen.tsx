@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router'
 import { toast } from 'react-toastify'
 import { AxiosError } from 'axios'
 import { useTimer } from '@siberiacancode/reactuse'
+import { ROUTES } from '../../util/routes'
 import { useInput } from '../../hooks/use-input'
 import { useDebounce } from '../../hooks/use-debounce'
 import { useEmail } from '../../http/useEmail'
@@ -58,7 +59,7 @@ export function EmailScreen() {
 
 	function signIn() {
 		if (codeInput.value == getCodeMutation.data?.data?.code) {
-			navigate('/') // TODO: navigate('/main')
+			navigate(ROUTES.taxiList)
 		} else {
 			setSignInBtnDisabled(true)
 			codeInput.reset()

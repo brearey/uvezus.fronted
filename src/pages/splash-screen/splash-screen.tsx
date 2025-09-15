@@ -1,14 +1,15 @@
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router'
-import './splash-screen-module.css'
+import { ROUTES } from '../../util/routes'
 import uvezusLogo from '../../assets/logo.svg'
+import './splash-screen-module.css'
 
 function SplashScreen() {
 	const navigate = useNavigate()
 
 	useEffect(() => {
 		setTimeout(() => {
-			navigate('/email')
+			navigate(ROUTES.codeConfirm)
 		}, 1000)
 	}, [navigate])
 

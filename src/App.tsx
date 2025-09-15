@@ -1,8 +1,10 @@
 import { Routes, Route, BrowserRouter } from 'react-router'
+import { QueryClientProvider, QueryClient } from '@tanstack/react-query'
+import { ToastContainer } from 'react-toastify'
 import { EmailScreen } from './pages/email-screen/email-screen'
 import { SplashScreen } from './pages/splash-screen/splash-screen'
-import { ToastContainer } from 'react-toastify'
-import { QueryClientProvider, QueryClient } from '@tanstack/react-query'
+import { TaxiListScreen } from './pages/taxi-list-screen/taxi-list-screen'
+import { ROUTES } from './util/routes'
 import './App.css'
 
 const queryClient = new QueryClient()
@@ -25,8 +27,9 @@ function App() {
 					limit={1}
 				/>
 				<Routes>
-					<Route path="/" element={<SplashScreen />} />
-					<Route path="/email" element={<EmailScreen />} />
+					<Route path={ROUTES.index} element={<SplashScreen />} />
+					<Route path={ROUTES.codeConfirm} element={<EmailScreen />} />
+					<Route path={ROUTES.taxiList} element={<TaxiListScreen />} />
 				</Routes>
 			</BrowserRouter>
 		</QueryClientProvider>
