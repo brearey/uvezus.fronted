@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUser } from '@fortawesome/free-solid-svg-icons'
 import uvezusLogo from '../../assets/logo.svg'
 import './taxi-list-module.css'
 
@@ -16,9 +18,11 @@ export function TaxiListScreen() {
 			<div className="address-wrapper">
 				<div className="left">
 					<div className="parent-count">
+						<FontAwesomeIcon icon={faUser} size='3x' className='icon' />
 						<span>1 взрос.</span>
 					</div>
 					<div className="child-count">
+						<FontAwesomeIcon icon={faUser} size='2x' className='icon' />
 						<span>1 реб.</span>
 					</div>
 				</div>
