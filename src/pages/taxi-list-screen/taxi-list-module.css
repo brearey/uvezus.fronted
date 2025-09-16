@@ -11,3 +11,29 @@
 .icon {
 	color: var(--accent-color)
 }
+
+.address-wrapper {
+	display: flex;
+	padding: 8px;
+	/* background-color: red; */
+}
+
+.address-wrapper .left {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	justify-content: center;
+	align-items: start;
+	width: 50%;
+	height: 100%;
+	/* background-color: blue; */
+}
+
+.address-wrapper .right {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 50%;
+	height: 100%;
+	/* background-color: green; */
+}
