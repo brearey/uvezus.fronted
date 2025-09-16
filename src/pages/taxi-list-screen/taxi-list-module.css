@@ -1,39 +1,91 @@
 .header {
-	background-color: var(--grey);
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
-	padding: 16px 0;
+  background-color: var(--grey);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 16px 0;
 }
 
 .icon {
-	color: var(--accent-color)
+  color: var(--accent-color);
 }
 
-.address-wrapper {
-	display: flex;
+.passengers-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--grey);
+  max-width: var(--max-width);
+	width: 100%;
 	padding: 8px;
-	/* background-color: red; */
 }
 
-.address-wrapper .left {
-	display: flex;
-	flex-direction: column;
-	gap: 8px;
-	justify-content: center;
-	align-items: start;
-	width: 50%;
-	height: 100%;
-	/* background-color: blue; */
+.passengers-wrapper .left {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
 }
 
-.address-wrapper .right {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 50%;
-	height: 100%;
-	/* background-color: green; */
+.passengers-wrapper .right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.passengers {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--black);
+}
+
+.adult-icon {
+  font-size: 18px;
+}
+
+.child-icon {
+  font-size: 16px;
+}
+
+.location-icon {
+  font-size: 20px;
+}
+
+.address-label {
+  font-size: 14px;
+  color: var(--black);
+  font-weight: 500;
+  max-width: 200px;
+  line-height: 1.4;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 480px) {
+  .passengers-wrapper {
+    flex-direction: column;
+    gap: 16px;
+    padding: 12px;
+  }
+  
+  .passengers-wrapper .left {
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .passengers-wrapper .right {
+    justify-content: center;
+  }
+  
+  .address-label {
+    text-align: center;
+  }
 }

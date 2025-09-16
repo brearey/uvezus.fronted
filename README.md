@@ -19,3 +19,6 @@ Design and business logic here: https://www.figma.com/design/PbD6hdxqIEycA1iRWVA
 - [ ] Code EmailScreen
 - [ ] useInput hook
 - [ ] Setup GitHub actions
+
+### Icons
+#### Free classic solid [Fontawesome](https://fontawesome.com/search?f=classic&s=solid&ic=free&o=r)
