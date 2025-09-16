@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faLocationDot } from '@fortawesome/free-solid-svg-icons'
+import { AddressModal } from '../../components/address-modal/address-modal'
 import uvezusLogo from '../../assets/logo.svg'
 import './taxi-list-module.css'
 
@@ -8,6 +9,22 @@ export function TaxiListScreen() {
 	const [adultCount, setAdultCount] = useState(1)
 	const [childCount, setChildCount] = useState(0)
 	const [address, setAddress] = useState('с. Чапаево, ул. Николаева 27/2')
+	const [isAddressModalOpen, setIsAddressModalOpen] = useState(false)
+	const [tempAddress, setTempAddress] = useState(address)
+
+	const handleSaveAddress = () => {
+		setAddress(tempAddress)
+		setIsAddressModalOpen(false)
+	}
+
+	const handleOpenModal = () => {
+		setTempAddress(address)
+		setIsAddressModalOpen(true)
+	}
+
+	const handleCloseModal = () => {
+		setIsAddressModalOpen(false)
+	}
 
 	return (
 		<div className="container">
@@ -15,9 +32,6 @@ export function TaxiListScreen() {
 			<div className="header">
 				<div>
 					<img src={uvezusLogo} alt="uvezus logo" height={60} />
-				</div>
-				<div className="title">
-					<span>Выберите такси на котором хотите поехать</span>
 				</div>
 			</div>
 
@@ -33,7 +47,7 @@ export function TaxiListScreen() {
 						<span>{childCount} реб.</span>
 					</div>
 				</div>
-				<div className="right">
+				<div className="right" onClick={handleOpenModal}>
 					<FontAwesomeIcon
 						icon={faLocationDot}
 						className="icon location-icon"
@@ -41,6 +55,14 @@ export function TaxiListScreen() {
 					<span className="address-label">{address}</span>
 				</div>
 			</div>
+
+			<AddressModal
+				isAddressModalOpen={isAddressModalOpen}
+				handleCloseModal={handleCloseModal}
+				tempAddress={tempAddress}
+				setTempAddress={setTempAddress}
+				handleSaveAddress={handleSaveAddress}
+			/>
 		</div>
 	)
 }
