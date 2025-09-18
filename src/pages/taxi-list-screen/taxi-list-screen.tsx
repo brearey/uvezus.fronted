@@ -1,11 +1,10 @@
 import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faLocationDot } from '@fortawesome/free-solid-svg-icons'
+import { isValidPassengersCount, isValidAddress } from '../../util/validators'
 import uvezusLogo from '../../assets/logo.svg'
 import './taxi-list-module.css'
 import { toast } from 'react-toastify'
-
-const isCountValid = (count: number) => count && count > 0 && count < 8
 
 export function TaxiListScreen() {
 	const [adultCount, setAdultCount] = useState(1)
@@ -13,13 +12,17 @@ export function TaxiListScreen() {
 	const [address, setAddress] = useState('с. Чапаево, ул. Николаева 27/2')
 
 	const openAddressModal = () => {
-		const temp = prompt('Введите ваш адрес') || address
-		setAddress(temp)
+		const temp = prompt('Введите ваш адрес')
+		if (temp && isValidAddress(temp)) {
+			setAddress(temp)
+		} else {
+			toast.warn('Введите корректный адрес')
+		}
 	}
 
 	const openAdultModal = () => {
 		const temp: number | null = Number(prompt('Введите количество взрослых пассажиров'))
-		if (isCountValid(temp)) {
+		if (isValidPassengersCount(temp)) {
 			setAdultCount(temp)
 		} else {
 			toast.warn('Введите корректное количество')
@@ -28,7 +31,7 @@ export function TaxiListScreen() {
 
 	const openChildModal = () => {
 		const temp: number | null = Number(prompt('Введите количество пассажиров-детей'))
-		if (isCountValid(temp)) {
+		if (isValidPassengersCount(temp)) {
 			setChildCount(temp)
 		} else {
 			toast.warn('Введите корректное количество')
