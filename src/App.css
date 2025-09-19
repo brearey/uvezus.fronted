@@ -60,9 +60,9 @@ body {
 
 .btn:disabled {
 	background-color: var(--grey);
-	cursor: not-allowed; /* Запрещающий курсор */
-	pointer-events: none; /* Отключает все события мыши */
-	opacity: 0.7; /* Визуальное указание на отключенное состояние */
+	cursor: not-allowed;
+	pointer-events: none;
+	opacity: 0.7;
 }
 
 .btn:active {
@@ -71,7 +71,6 @@ body {
 	transform: translateY(var(--btn-active-translate));
 }
 
-/* Дополнительно: убрать активное состояние для отключенных кнопок */
 .btn:disabled:active {
 	transform: none;
 	box-shadow: var(--shadow-medium) var(--grey);

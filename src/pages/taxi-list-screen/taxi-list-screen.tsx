@@ -86,8 +86,7 @@ export function TaxiListScreen() {
 					</div>
 					<div className="package">
 						<FontAwesomeIcon icon={faCube} className="icon" />
-						<input id='package-input' type="checkbox" checked={false} style={{display: 'inline'}}/>
-						<label htmlFor="package-input" style={{display: 'inline'}}>Посылка</label>
+						<label htmlFor="package-input">Посылка</label>
 					</div>
 				</div>
 				<div className="right">
