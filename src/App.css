@@ -7,7 +7,8 @@
 	--grey-light: #f8f8f8;
 	--accent-color: #008cce;
 	--accent-color-light: #54b1dc;
-	--font-size: 1.2rem;
+	--font-size-big: 1.2rem;
+	--font-size-small: 1rem;
 	--shadow-medium: 0 4px;
 	--shadow-small: 0 2px;
 	--btn-active-translate: 4px;

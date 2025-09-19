@@ -20,5 +20,9 @@ Design and business logic here: https://www.figma.com/design/PbD6hdxqIEycA1iRWVA
 - [ ] useInput hook
 - [ ] Setup GitHub actions
 
+- [ ] Send package. Do layout checkbox
+- [ ] Add from address label in taxi-list-screen.tsx
+- [ ] Add to address label in taxi-list-screen.tsx
+
 ### Icons
 #### Free classic solid [Fontawesome](https://fontawesome.com/search?f=classic&s=solid&ic=free&o=r)

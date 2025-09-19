@@ -29,19 +29,27 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-  justify-content: center;
+	align-items: flex-start;
+  justify-content: flex-end;
+	width: 40%;
 }
 
 .passengers-wrapper .right {
   display: flex;
-  align-items: center;
+	flex-direction: column;
+  align-items: flex-start;
   gap: 12px;
   justify-content: flex-end;
+	width: 60%;
+}
+
+.from, .to {
 	cursor: pointer;
+	padding: 4px;
 	border-radius: 8px;
 }
 
-.passengers-wrapper .right:hover, .passengers:hover {
+.passengers-wrapper .right .from:hover, .passengers-wrapper .right .to:hover, .passengers:hover {
   background-color: var(--grey-light);
 }
 
@@ -73,6 +81,8 @@
   font-weight: 500;
   max-width: 200px;
   line-height: 1.4;
+	text-align: start;
+	font-size: var(--font-size-small);
 }
 
 /* Адаптивность для мобильных устройств */
@@ -84,13 +94,16 @@
   }
   
   .passengers-wrapper .left {
+		width: 100%;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     gap: 20px;
   }
   
   .passengers-wrapper .right {
-    justify-content: center;
+		width: 100%;
+    justify-content: space-around;
+		white-space: nowrap;
   }
   
   .address-label {

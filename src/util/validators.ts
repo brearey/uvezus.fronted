@@ -1,4 +1,4 @@
-export const isValidPassengersCount = (count: number) => count && count > 0 && count < 8
+export const isValidPassengersCount = (count: number | null) => count !== null && count >= 0 && count < 8
 
 const addressRegex = /^[а-яёА-ЯЁ0-9\s.,/-]+$/;
 
