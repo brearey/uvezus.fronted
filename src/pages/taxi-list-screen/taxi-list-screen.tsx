@@ -1,9 +1,13 @@
 import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser, faLocationDot, faCube } from '@fortawesome/free-solid-svg-icons'
+import {
+	faUser,
+	faCube,
+	faA,
+	faB,
+} from '@fortawesome/free-solid-svg-icons'
 import { isValidPassengersCount, isValidAddress } from '../../util/validators'
 import uvezusLogo from '../../assets/logo.svg'
-import './taxi-list-module.css'
 import { toast } from 'react-toastify'
 
 export function TaxiListScreen() {
@@ -65,44 +69,77 @@ export function TaxiListScreen() {
 	}
 
 	return (
-		<div className="container">
+		<div className="container mx-auto p-2">
 			{/* header */}
-			<div className="header">
+			<div className="mb-2 flex flex-col items-center">
 				<div>
-					<img src={uvezusLogo} alt="uvezus logo" height={60} />
+					<img src={uvezusLogo} alt="uvezus logo" className="" />
 				</div>
+				<h1 className='text-xl sm:text-2xl font-bold'>Заполните данные и выберите себе такси</h1>
 			</div>
 
 			{/* passenger and address */}
-			<div className="passengers-wrapper">
-				<div className="left">
-					<div className="passengers" onClick={openAdultModal}>
-						<FontAwesomeIcon icon={faUser} className="icon adult-icon" />
-						<span>{showAdultCount(adultCount)}</span>
+			<div className="flex flex-col lg:flex-row gap-6 p-6 bg-white rounded-lg shadow-md">
+				{/* left section - passengers */}
+				<div className="flex flex-col gap-4 flex-1">
+					{/* Adult */}
+					<div
+						className="flex items-center gap-3 p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors duration-200"
+						onClick={openAdultModal}
+					>
+						<FontAwesomeIcon icon={faUser} className="text-sky-600 text-lg" />
+						<span className="text-gray-700 font-medium">
+							{showAdultCount(adultCount)}
+						</span>
 					</div>
-					<div className="passengers" onClick={openChildModal}>
-						<FontAwesomeIcon icon={faUser} className="icon child-icon" />
-						<span>{showChildCount(childCount)}</span>
+
+					{/* Child */}
+					<div
+						className="flex items-center gap-3 p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors duration-200"
+						onClick={openChildModal}
+					>
+						<FontAwesomeIcon icon={faUser} className="text-sky-600 text-lg" />
+						<span className="text-gray-700 font-medium">
+							{showChildCount(childCount)}
+						</span>
 					</div>
-					<div className="package">
-						<FontAwesomeIcon icon={faCube} className="icon" />
-						<label htmlFor="package-input">Посылка</label>
+
+					{/* Package */}
+					<div
+						className="flex items-center gap-3 p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors duration-200"
+						
+					>
+						<FontAwesomeIcon icon={faCube} className="text-sky-600 text-lg" />
+						<span className="text-gray-700 font-medium">Посылка</span>
 					</div>
 				</div>
-				<div className="right">
-					<div className="from" onClick={openFromAddressModal}>
+
+				{/* right section - addresses */}
+				<div className="flex flex-col gap-4 flex-1">
+					<div
+						className="flex items-center gap-3 p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors duration-200"
+						onClick={openFromAddressModal}
+					>
 						<FontAwesomeIcon
-							icon={faLocationDot}
-							className="icon location-icon"
+							icon={faA}
+							className="text-red-600 text-lg"
 						/>
-						<span className="address-label">Откуда: {fromAddress}</span>
+						<span className="text-gray-700">
+							<span className="font-medium">Откуда:</span> {fromAddress}
+						</span>
 					</div>
-					<div className="to" onClick={openToAddressModal}>
+
+					<div
+						className="flex items-center gap-3 p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors duration-200"
+						onClick={openToAddressModal}
+					>
 						<FontAwesomeIcon
-							icon={faLocationDot}
-							className="icon location-icon"
+							icon={faB}
+							className="text-red-600 text-lg"
 						/>
-						<span className="address-label">Куда: {toAddress}</span>
+						<span className="text-gray-700">
+							<span className="font-medium">Куда:</span> {toAddress}
+						</span>
 					</div>
 				</div>
 			</div>
