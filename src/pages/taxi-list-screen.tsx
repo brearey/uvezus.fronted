@@ -102,7 +102,7 @@ export function TaxiListScreen() {
 				<div className="flex flex-col gap-4 flex-1">
 					{/* Adult */}
 					<div
-						className="flex items-center gap-3 p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors duration-200"
+						className="flex items-center gap-3 p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200"
 						onClick={openAdultModal}
 					>
 						<FontAwesomeIcon icon={faUser} className="text-sky-600 text-lg" />
@@ -113,7 +113,7 @@ export function TaxiListScreen() {
 
 					{/* Child */}
 					<div
-						className="flex items-center gap-3 p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors duration-200"
+						className="flex items-center gap-3 p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200"
 						onClick={openChildModal}
 					>
 						<FontAwesomeIcon icon={faUser} className="text-sky-600 text-lg" />
@@ -142,7 +142,7 @@ export function TaxiListScreen() {
 				{/* right section - addresses */}
 				<div className="flex flex-col gap-4 flex-1">
 					<div
-						className="flex items-center gap-3 p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors duration-200"
+						className="flex items-center gap-3 p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200"
 						onClick={openFromAddressModal}
 					>
 						<FontAwesomeIcon icon={faA} className="text-red-600 text-lg" />
@@ -152,7 +152,7 @@ export function TaxiListScreen() {
 					</div>
 
 					<div
-						className="flex items-center gap-3 p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors duration-200"
+						className="flex items-center gap-3 p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200"
 						onClick={openToAddressModal}
 					>
 						<FontAwesomeIcon icon={faB} className="text-red-600 text-lg" />
@@ -164,6 +164,8 @@ export function TaxiListScreen() {
 			</div>
 
 			{/* List of taxis */}
+			<TaxiItem />
+			<TaxiItem />
 			<TaxiItem />
 		</div>
 	)
