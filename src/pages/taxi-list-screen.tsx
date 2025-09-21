@@ -1,10 +1,12 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faCube, faA, faB } from '@fortawesome/free-solid-svg-icons'
-import { isValidPassengersCount, isValidAddress } from '../util/validators'
-import { useLocalStorage } from '../hooks/use-storage'
-import { TaxiItem } from '../components/taxi-item'
-import uvezusLogo from '../assets/logo.svg'
 import { toast } from 'react-toastify'
+import { TaxiItem } from '../components/taxi-item'
+import { useLocalStorage } from '../hooks/use-storage'
+import { isValidPassengersCount, isValidAddress } from '../util/validators'
+import { City } from '../types/types'
+import uvezusLogo from '../assets/logo.svg'
+import camry from '../assets/camry-one-love.webp' //TODO: delete
 
 export function TaxiListScreen() {
 	const [adultCount, setAdultCount] = useLocalStorage('adultCount', 1)
@@ -164,9 +166,44 @@ export function TaxiListScreen() {
 			</div>
 
 			{/* List of taxis */}
-			<TaxiItem />
-			<TaxiItem />
-			<TaxiItem />
+			<TaxiItem
+				from={City.oktem}
+				to={City.ykt}
+				driveAt={new Date()}
+				description={'С адреса до адреса. Беру посылки'}
+				cost={400}
+				car={{
+					imageUrl: camry,
+					model: 'Toyota Camry',
+					number: 'О297КЕ'
+				}}
+			/>
+
+			<TaxiItem
+				from={City.oktem}
+				to={City.ykt}
+				driveAt={new Date()}
+				description={'С адреса до адреса. Беру посылки'}
+				cost={400}
+				car={{
+					imageUrl: camry,
+					model: 'Toyota Camry',
+					number: 'О297КЕ'
+				}}
+			/>
+
+			<TaxiItem
+				from={City.oktem}
+				to={City.ykt}
+				driveAt={new Date()}
+				description={'С адреса до адреса. Беру посылки'}
+				cost={400}
+				car={{
+					imageUrl: camry,
+					model: 'Toyota Camry',
+					number: 'О297КЕ'
+				}}
+			/>
 		</div>
 	)
 }

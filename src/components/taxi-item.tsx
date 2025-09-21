@@ -5,9 +5,19 @@ import {
 	faCoins,
 	faCar,
 } from '@fortawesome/free-solid-svg-icons'
+import { City, type Car } from '../types/types'
 import camry from '../assets/camry-one-love.webp'
 
-export const TaxiItem = () => {
+type Props = {
+	from: City,
+	to: City,
+	driveAt: Date,
+	description: string | null,
+	cost: number,
+	car: Car
+}
+
+export const TaxiItem = ({from, to, driveAt, description, cost, car}: Props) => {
 	return (
 		<a
 			href="#"
@@ -26,32 +36,32 @@ export const TaxiItem = () => {
 			<div className="flex-1 min-w-0">
 				{/* Заголовок с переносами */}
 				<h5 className="mb-2 text-xl sm:text-2xl font-bold tracking-tight break-words">
-					<span className="whitespace-nowrap">Октемцы</span>
+					<span className="whitespace-nowrap">{from}</span>
 					<FontAwesomeIcon
 						className="mx-2 text-lg sm:text-xl"
 						icon={faCircleArrowRight}
 					/>
-					<span className="whitespace-nowrap">Якутск</span>
+					<span className="whitespace-nowrap">{to}</span>
 				</h5>
 
 				{/* Детали */}
 				<div className="space-y-2 text-sm sm:text-base">
 					<p className="font-normal text-gray-700">
-						Увезу в Якутск в <FontAwesomeIcon icon={faClock} className="w-4" />7:30
+						Увезу в {to} в <FontAwesomeIcon icon={faClock} className="w-4" />{`${driveAt.getHours()}:${driveAt.getMinutes()}`}
 					</p>
 
 					<p className="font-normal text-gray-700">
-						С адреса до адреса. Беру посылки
+						{description}
 					</p>
 
 					<p className="font-medium text-gray-700">
 						<FontAwesomeIcon icon={faCoins} className="w-4 mr-2" />
-						400 рублей
+						{cost} рублей
 					</p>
 
 					<p className="font-medium text-gray-700">
 						<FontAwesomeIcon icon={faCar} className="w-4 mr-2" />
-						Номер машины: <b className="text-sky-700">О297КЕ</b>
+						{car.model} с номером: <b className="text-sky-700">{car.number}</b>
 					</p>
 				</div>
 			</div>
