@@ -1,9 +1,9 @@
 import { Routes, Route, BrowserRouter } from 'react-router'
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query'
 import { ToastContainer } from 'react-toastify'
-import { EmailScreen } from './pages/email-screen/email-screen'
-import { SplashScreen } from './pages/splash-screen/splash-screen'
-import { TaxiListScreen } from './pages/taxi-list-screen/taxi-list-screen'
+import { EmailScreen } from './pages/email-screen'
+import { SplashScreen } from './pages/splash-screen'
+import { TaxiListScreen } from './pages/taxi-list-screen'
 import { ROUTES } from './util/routes'
 
 const queryClient = new QueryClient()

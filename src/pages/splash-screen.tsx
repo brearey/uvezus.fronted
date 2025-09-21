@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router'
-import { ROUTES } from '../../util/routes'
-import uvezusLogo from '../../assets/logo.svg'
+import { ROUTES } from '../util/routes'
+import uvezusLogo from '../assets/logo.svg'
 
 function SplashScreen() {
 	const navigate = useNavigate()

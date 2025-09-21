@@ -3,12 +3,12 @@ import { useNavigate } from 'react-router'
 import { toast } from 'react-toastify'
 import { AxiosError } from 'axios'
 import { useTimer } from '@siberiacancode/reactuse'
-import { ROUTES } from '../../util/routes'
-import { useInput } from '../../hooks/use-input'
-import { useDebounce } from '../../hooks/use-debounce'
-import { useEmail } from '../../http/useEmail'
-import { validateEmail } from '../../util/email'
-import uvezusLogo from '../../assets/logo.svg'
+import { useDebounce } from '../hooks/use-debounce'
+import { useInput } from '../hooks/use-input'
+import { useEmail } from '../http/useEmail'
+import { ROUTES } from '../util/routes'
+import { validateEmail } from '../util/email'
+import uvezusLogo from '../assets/logo.svg'
 
 const TIMER_SECONDS = 60
 const CODE_MAX_LENGTH = 4
