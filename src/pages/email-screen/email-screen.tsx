@@ -71,7 +71,7 @@ export function EmailScreen() {
 			<div className="mb-8">
 				<img src={uvezusLogo} alt="uvezus logo" className="w-32 h-auto" />
 			</div>
-			<h1 className='text-2xl font-bold'>Войдите с помощью почты</h1>
+			<h1 className="text-2xl font-bold">Войдите с помощью почты</h1>
 
 			<div className="w-full max-w-md mb-6 p-6 bg-white rounded-lg shadow-md">
 				<label

@@ -1,11 +1,6 @@
 import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-	faUser,
-	faCube,
-	faA,
-	faB,
-} from '@fortawesome/free-solid-svg-icons'
+import { faUser, faCube, faA, faB } from '@fortawesome/free-solid-svg-icons'
 import { isValidPassengersCount, isValidAddress } from '../../util/validators'
 import uvezusLogo from '../../assets/logo.svg'
 import { toast } from 'react-toastify'
@@ -75,7 +70,9 @@ export function TaxiListScreen() {
 				<div>
 					<img src={uvezusLogo} alt="uvezus logo" className="" />
 				</div>
-				<h1 className='text-xl sm:text-2xl font-bold'>Заполните данные и выберите себе такси</h1>
+				<h1 className="text-xl sm:text-2xl font-bold">
+					Заполните данные и выберите себе такси
+				</h1>
 			</div>
 
 			{/* passenger and address */}
@@ -105,10 +102,7 @@ export function TaxiListScreen() {
 					</div>
 
 					{/* Package */}
-					<div
-						className="flex items-center gap-3 p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors duration-200"
-						
-					>
+					<div className="flex items-center gap-3 p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors duration-200">
 						<FontAwesomeIcon icon={faCube} className="text-sky-600 text-lg" />
 						<span className="text-gray-700 font-medium">Посылка</span>
 					</div>
@@ -120,10 +114,7 @@ export function TaxiListScreen() {
 						className="flex items-center gap-3 p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors duration-200"
 						onClick={openFromAddressModal}
 					>
-						<FontAwesomeIcon
-							icon={faA}
-							className="text-red-600 text-lg"
-						/>
+						<FontAwesomeIcon icon={faA} className="text-red-600 text-lg" />
 						<span className="text-gray-700">
 							<span className="font-medium">Откуда:</span> {fromAddress}
 						</span>
@@ -133,10 +124,7 @@ export function TaxiListScreen() {
 						className="flex items-center gap-3 p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors duration-200"
 						onClick={openToAddressModal}
 					>
-						<FontAwesomeIcon
-							icon={faB}
-							className="text-red-600 text-lg"
-						/>
+						<FontAwesomeIcon icon={faB} className="text-red-600 text-lg" />
 						<span className="text-gray-700">
 							<span className="font-medium">Куда:</span> {toAddress}
 						</span>

@@ -15,7 +15,7 @@ function SplashScreen() {
 	return (
 		<div className="container h-screen font-sans flex justify-center items-center flex-col">
 			<div>
-				<span className='text-sm sm:text-xl'>
+				<span className="text-sm sm:text-xl">
 					<b>Веб приложение</b>
 				</span>
 			</div>
