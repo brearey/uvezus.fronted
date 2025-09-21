@@ -23,6 +23,8 @@ Design and business logic here: https://www.figma.com/design/PbD6hdxqIEycA1iRWVA
 - [ ] Send package. Do layout checkbox
 - [ ] Add from address label in taxi-list-screen.tsx
 - [ ] Add to address label in taxi-list-screen.tsx
+- [ ] Create .env and install `dotenv`
+- [ ] Add `SERVER_URL` parameter
 
 ### Icons
 #### Free classic solid [Fontawesome](https://fontawesome.com/search?f=classic&s=solid&ic=free&o=r)
