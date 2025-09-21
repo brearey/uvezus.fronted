@@ -1,15 +1,13 @@
-import { useState, type ChangeEvent } from 'react'
+import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faCube, faA, faB } from '@fortawesome/free-solid-svg-icons'
 import { isValidPassengersCount, isValidAddress } from '../../util/validators'
-import { useInput } from '../../hooks/use-input'
 import uvezusLogo from '../../assets/logo.svg'
 import { toast } from 'react-toastify'
 
 export function TaxiListScreen() {
 	const [adultCount, setAdultCount] = useState(1)
 	const [childCount, setChildCount] = useState(0)
-	const packageInput = useInput(false)
 	const [fromAddress, setFromAddress] = useState(
 		'с. Чапаево, ул. Николаева 27/2'
 	)
@@ -65,12 +63,6 @@ export function TaxiListScreen() {
 		return `${count} ${count === 1 ? 'ребенок' : 'детей'}`
 	}
 
-	const onChangePackageInput = (event: ChangeEvent<HTMLInputElement>) => {
-		console.log(event.target.value)
-		console.log(typeof event.target.value)
-		packageInput.onChange(event)
-	}
-
 	return (
 		<div className="container mx-auto p-2 select-none">
 			{/* header */}
@@ -113,8 +105,7 @@ export function TaxiListScreen() {
 					<input
 						type="checkbox"
 						id="react-option"
-						checked={packageInput.value}
-						onChange={onChangePackageInput}
+						value=""
 						className="hidden peer"
 						required
 					/>
