@@ -9,7 +9,6 @@ import { useDebounce } from '../../hooks/use-debounce'
 import { useEmail } from '../../http/useEmail'
 import { validateEmail } from '../../util/email'
 import uvezusLogo from '../../assets/logo.svg'
-import './email-screen-module.css'
 
 const TIMER_SECONDS = 60
 const CODE_MAX_LENGTH = 4
@@ -68,29 +67,46 @@ export function EmailScreen() {
 	}
 
 	return (
-		<div className="container jc-center">
-			<div>
-				<img src={uvezusLogo} alt="uvezus logo" />
+		<div className="container flex flex-col items-center justify-center min-h-screen p-4">
+			<div className="mb-8">
+				<img src={uvezusLogo} alt="uvezus logo" className="w-32 h-auto" />
 			</div>
-			<div className="section">
-				<label htmlFor="email">Введите вашу почту:</label>
-				<br />
+			<h1 className='text-2xl font-bold'>Войдите с помощью почты</h1>
+
+			<div className="w-full max-w-md mb-6 p-6 bg-white rounded-lg shadow-md">
+				<label
+					htmlFor="email"
+					className="block text-sm font-medium text-gray-700 mb-2"
+				>
+					Введите вашу почту:
+				</label>
 				<input
 					id="email"
 					type="email"
 					placeholder="your@email.ru"
 					value={emailInput.value}
 					onChange={onEmailChanged}
+					className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-600 focus:border-transparent transition duration-500 ease-in-out"
 				/>
-				<div className="resend-text-wrapper">
+				<div className="mt-3 text-sm text-gray-600">
 					<span>Отправить код повторно через {codeTimer.seconds} сек.</span>
 				</div>
-				<button onClick={getCode} className="btn" disabled={getCodeBtnDisabled}>
+				<button
+					onClick={getCode}
+					className="w-full mt-4 px-4 py-2 bg-sky-600 text-white rounded-md hover:bg-sky-400 cursor-pointer disabled:bg-gray-400 disabled:cursor-not-allowed transition duration-500 ease-in-out"
+					disabled={getCodeBtnDisabled}
+				>
 					Получить код
 				</button>
 			</div>
-			<div className="section">
-				<label htmlFor="code">Введите полученный код здесь:</label>
+
+			<div className="w-full max-w-md p-6 bg-white rounded-lg shadow-md">
+				<label
+					htmlFor="code"
+					className="block text-sm font-medium text-gray-700 mb-2"
+				>
+					Введите полученный код здесь:
+				</label>
 				<input
 					id="code"
 					type="text"
@@ -98,9 +114,13 @@ export function EmailScreen() {
 					placeholder="your code..."
 					value={codeInput.value}
 					onChange={onCodeChanged}
+					className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-600 focus:border-transparent mb-4 transition duration-500 ease-in-out"
 				/>
-				<br />
-				<button onClick={signIn} className="btn" disabled={signInBtnDisabled}>
+				<button
+					onClick={signIn}
+					className="w-full px-4 py-2 bg-sky-600 text-white rounded-md hover:bg-sky-400 disabled:bg-gray-400 cursor-pointer disabled:cursor-not-allowed transition duration-500 ease-in-out"
+					disabled={signInBtnDisabled}
+				>
 					Войти
 				</button>
 			</div>

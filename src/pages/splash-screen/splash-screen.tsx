@@ -13,7 +13,7 @@ function SplashScreen() {
 	}, [navigate])
 
 	return (
-		<div className="container h-screen font-mono flex justify-center items-center flex-col">
+		<div className="container h-screen font-sans flex justify-center items-center flex-col">
 			<div>
 				<span className='text-sm sm:text-xl'>
 					<b>Веб приложение</b>
