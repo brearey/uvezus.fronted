@@ -12,6 +12,7 @@ export function TaxiListScreen() {
 		'с. Чапаево, ул. Николаева 27/2'
 	)
 	const [toAddress, setToAddress] = useState('г. Якутск, 203 мкрн. корпус 28')
+	const [packageChecked, setPackageChecked] = useState(false)
 
 	const openFromAddressModal = () => {
 		const temp = prompt('Введите ваш адрес', fromAddress)
@@ -53,6 +54,10 @@ export function TaxiListScreen() {
 		} else {
 			toast.warn('Введите корректное количество')
 		}
+	}
+
+	const changePackageChecked = () => {
+		setPackageChecked((prev) => !prev)
 	}
 
 	const showAdultCount = (count: number): string => {
@@ -105,9 +110,9 @@ export function TaxiListScreen() {
 					<input
 						type="checkbox"
 						id="react-option"
-						value=""
+						checked={packageChecked}
+						onChange={changePackageChecked}
 						className="hidden peer"
-						required
 					/>
 					<label
 						htmlFor="react-option"
