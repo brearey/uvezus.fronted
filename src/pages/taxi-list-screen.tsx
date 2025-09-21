@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faCube, faA, faB } from '@fortawesome/free-solid-svg-icons'
 import { isValidPassengersCount, isValidAddress } from '../util/validators'
 import { useLocalStorage } from '../hooks/use-storage'
-import {} from '../components/taxi-item'
+import { TaxiItem } from '../components/taxi-item'
 import uvezusLogo from '../assets/logo.svg'
 import { toast } from 'react-toastify'
 
@@ -162,6 +162,9 @@ export function TaxiListScreen() {
 					</div>
 				</div>
 			</div>
+
+			{/* List of taxis */}
+			<TaxiItem />
 		</div>
 	)
 }
