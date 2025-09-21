@@ -114,9 +114,7 @@ export function TaxiListScreen() {
 						className="flex items-center gap-3 p-4 text-gray-700 bg-white border border-gray-300 rounded-lg cursor-pointer peer-checked:bg-sky-200 hover:text-gray-600 peer-checked:text-gray-600"
 					>
 						<FontAwesomeIcon icon={faCube} className="text-sky-600 text-lg" />
-							<span className="text-gray-700 font-medium">
-								Отправлю посылку
-							</span>
+						<span className="text-gray-700 font-medium">Отправлю посылку</span>
 					</label>
 				</div>
 
