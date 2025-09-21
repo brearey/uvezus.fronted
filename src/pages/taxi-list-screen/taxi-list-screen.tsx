@@ -64,14 +64,14 @@ export function TaxiListScreen() {
 	}
 
 	return (
-		<div className="container mx-auto p-2">
+		<div className="container mx-auto p-2 select-none">
 			{/* header */}
 			<div className="mb-2 flex flex-col items-center">
 				<div>
 					<img src={uvezusLogo} alt="uvezus logo" className="" />
 				</div>
-				<h1 className="text-xl sm:text-2xl font-bold">
-					Заполните данные и выберите себе такси
+				<h1 className="text-xl sm:text-2xl font-bold w-full text-center">
+					Заполните данные и выберите такси
 				</h1>
 			</div>
 
@@ -102,10 +102,22 @@ export function TaxiListScreen() {
 					</div>
 
 					{/* Package */}
-					<div className="flex items-center gap-3 p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors duration-200">
+					<input
+						type="checkbox"
+						id="react-option"
+						value=""
+						className="hidden peer"
+						required
+					/>
+					<label
+						htmlFor="react-option"
+						className="flex items-center gap-3 p-4 text-gray-700 bg-white border border-gray-300 rounded-lg cursor-pointer peer-checked:bg-sky-200 hover:text-gray-600 peer-checked:text-gray-600"
+					>
 						<FontAwesomeIcon icon={faCube} className="text-sky-600 text-lg" />
-						<span className="text-gray-700 font-medium">Посылка</span>
-					</div>
+							<span className="text-gray-700 font-medium">
+								Отправлю посылку
+							</span>
+					</label>
 				</div>
 
 				{/* right section - addresses */}
