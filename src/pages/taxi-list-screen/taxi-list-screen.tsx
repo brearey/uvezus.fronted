@@ -33,6 +33,8 @@ export function TaxiListScreen() {
 	}
 
 	const openAdultModal = () => {
+		if (packageChecked) return
+		
 		const temp: number | null = Number(
 			prompt('Введите количество взрослых пассажиров', adultCount.toString())
 		)
@@ -45,6 +47,8 @@ export function TaxiListScreen() {
 	}
 
 	const openChildModal = () => {
+		if (packageChecked) return
+
 		const temp: number | null = Number(
 			prompt('Введите количество пассажиров-детей', childCount.toString())
 		)
@@ -58,6 +62,8 @@ export function TaxiListScreen() {
 
 	const changePackageChecked = () => {
 		setPackageChecked((prev) => !prev)
+		setAdultCount(0)
+		setChildCount(0)
 	}
 
 	const showAdultCount = (count: number): string => {
@@ -67,6 +73,8 @@ export function TaxiListScreen() {
 	const showChildCount = (count: number): string => {
 		return `${count} ${count === 1 ? 'ребенок' : 'детей'}`
 	}
+
+	const lineThrough = packageChecked ? 'line-through' : ''
 
 	return (
 		<div className="container mx-auto p-2 select-none">
@@ -90,7 +98,7 @@ export function TaxiListScreen() {
 						onClick={openAdultModal}
 					>
 						<FontAwesomeIcon icon={faUser} className="text-sky-600 text-lg" />
-						<span className="text-gray-700 font-medium">
+						<span className={'text-gray-700 font-medium ' + lineThrough}>
 							{showAdultCount(adultCount)}
 						</span>
 					</div>
@@ -101,7 +109,7 @@ export function TaxiListScreen() {
 						onClick={openChildModal}
 					>
 						<FontAwesomeIcon icon={faUser} className="text-sky-600 text-lg" />
-						<span className="text-gray-700 font-medium">
+						<span className={'text-gray-700 font-medium ' + lineThrough}>
 							{showChildCount(childCount)}
 						</span>
 					</div>
