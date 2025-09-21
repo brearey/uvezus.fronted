@@ -1,18 +1,25 @@
-import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faCube, faA, faB } from '@fortawesome/free-solid-svg-icons'
 import { isValidPassengersCount, isValidAddress } from '../../util/validators'
+import { useLocalStorage } from '../../hooks/use-storage'
 import uvezusLogo from '../../assets/logo.svg'
 import { toast } from 'react-toastify'
 
 export function TaxiListScreen() {
-	const [adultCount, setAdultCount] = useState(1)
-	const [childCount, setChildCount] = useState(0)
-	const [fromAddress, setFromAddress] = useState(
+	const [adultCount, setAdultCount] = useLocalStorage('adultCount', 1)
+	const [childCount, setChildCount] = useLocalStorage('childCount', 0)
+	const [fromAddress, setFromAddress] = useLocalStorage(
+		'fromAddress',
 		'с. Чапаево, ул. Николаева 27/2'
 	)
-	const [toAddress, setToAddress] = useState('г. Якутск, 203 мкрн. корпус 28')
-	const [packageChecked, setPackageChecked] = useState(false)
+	const [toAddress, setToAddress] = useLocalStorage(
+		'toAddress',
+		'г. Якутск, 203 мкрн. корпус 28'
+	)
+	const [packageChecked, setPackageChecked] = useLocalStorage(
+		'packageChecked',
+		false
+	)
 
 	const openFromAddressModal = () => {
 		const temp = prompt('Введите ваш адрес', fromAddress)
@@ -34,7 +41,7 @@ export function TaxiListScreen() {
 
 	const openAdultModal = () => {
 		if (packageChecked) return
-		
+
 		const temp: number | null = Number(
 			prompt('Введите количество взрослых пассажиров', adultCount.toString())
 		)
@@ -61,7 +68,7 @@ export function TaxiListScreen() {
 	}
 
 	const changePackageChecked = () => {
-		setPackageChecked((prev) => !prev)
+		setPackageChecked((prev: boolean) => !prev)
 		setAdultCount(0)
 		setChildCount(0)
 	}
