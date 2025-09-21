@@ -2,7 +2,6 @@ import { useEffect } from 'react'
 import { useNavigate } from 'react-router'
 import { ROUTES } from '../../util/routes'
 import uvezusLogo from '../../assets/logo.svg'
-import './splash-screen-module.css'
 
 function SplashScreen() {
 	const navigate = useNavigate()
@@ -14,23 +13,23 @@ function SplashScreen() {
 	}, [navigate])
 
 	return (
-		<div className="container jc-center">
+		<div className="container h-screen font-mono flex justify-center items-center flex-col">
 			<div>
-				<span>
+				<span className='text-sm sm:text-xl'>
 					<b>Веб приложение</b>
 				</span>
 			</div>
 			<div>
-				<span className="blue-text">
+				<span className="text-sky-600 text-xl sm:text-4xl">
 					<b>УВЕЗУСЬ</b>
 				</span>
 			</div>
-			<div className="logo-wrapper">
+			<div>
 				<img src={uvezusLogo} alt="uvezus logo" />
 			</div>
 			<div>
-				<span>
-					Такси <span className="blue-text">Якутск-Октемцы</span>
+				<span className="text-gray-600 text-sm sm:text-xl">
+					Такси Якутск-Октемцы
 				</span>
 			</div>
 		</div>

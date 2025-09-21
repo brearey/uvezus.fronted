@@ -5,7 +5,7 @@ import { EmailScreen } from './pages/email-screen/email-screen'
 import { SplashScreen } from './pages/splash-screen/splash-screen'
 import { TaxiListScreen } from './pages/taxi-list-screen/taxi-list-screen'
 import { ROUTES } from './util/routes'
-import './App.css'
+// import './App.css'
 
 const queryClient = new QueryClient()
 
