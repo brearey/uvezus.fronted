@@ -25,6 +25,7 @@ Design and business logic here: https://www.figma.com/design/PbD6hdxqIEycA1iRWVA
 - [ ] Add to address label in taxi-list-screen.tsx
 - [ ] Create .env and install `dotenv`
 - [ ] Add `SERVER_URL` parameter
+- [ ] Bug in splash screen and email screen. All in the not center
 
 ### Icons
 #### Free classic solid [Fontawesome](https://fontawesome.com/search?f=classic&s=solid&ic=free&o=r)
