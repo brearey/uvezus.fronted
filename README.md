@@ -27,6 +27,8 @@ Design and business logic here: https://www.figma.com/design/PbD6hdxqIEycA1iRWVA
 - [ ] Add `SERVER_URL` parameter
 - [ ] Bug in splash screen and email screen. All in the not center
 - [ ] Sergey: decrease image size in mobile as desktop
+- [ ] Add time diapason for example 07:00 - 07:30
+- [ ] Delete prompts
 
 ### Icons
 #### Free classic solid [Fontawesome](https://fontawesome.com/search?f=classic&s=solid&ic=free&o=r)
