@@ -25,7 +25,7 @@ Design and business logic here: https://www.figma.com/design/PbD6hdxqIEycA1iRWVA
 - [ ] Add to address label in taxi-list-screen.tsx
 - [ ] Create .env and install `dotenv`
 - [ ] Add `SERVER_URL` parameter
-- [ ] Bug in splash screen and email screen. All in the not center
+- [x] Bug in splash screen and email screen. All in the not center
 - [ ] Sergey: decrease image size in mobile as desktop
 - [ ] Add time diapason for example 07:00 - 07:30
 - [ ] Delete prompts
