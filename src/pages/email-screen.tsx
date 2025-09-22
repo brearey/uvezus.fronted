@@ -67,7 +67,7 @@ export function EmailScreen() {
 	}
 
 	return (
-		<div className="container flex flex-col items-center justify-center min-h-screen p-4">
+		<div className="mx-auto container flex flex-col items-center justify-center min-h-screen p-4">
 			<div className="mb-8">
 				<img src={uvezusLogo} alt="uvezus logo" className="w-32 h-auto" />
 			</div>

@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router'
 import { ROUTES } from '../util/routes'
+import { City } from '../types/types'
 import uvezusLogo from '../assets/logo.svg'
 
 function SplashScreen() {
@@ -13,7 +14,7 @@ function SplashScreen() {
 	}, [navigate])
 
 	return (
-		<div className="container h-screen font-sans flex justify-center items-center flex-col">
+		<div className="mx-auto container h-screen font-sans flex justify-center items-center flex-col">
 			<div>
 				<span className="text-sm sm:text-xl">
 					<b>Веб приложение</b>
@@ -29,7 +30,7 @@ function SplashScreen() {
 			</div>
 			<div>
 				<span className="text-gray-600 text-sm sm:text-xl">
-					Такси Якутск-Октемцы
+					Такси {City.oktem} - {City.ykt}
 				</span>
 			</div>
 		</div>
