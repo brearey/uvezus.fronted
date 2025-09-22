@@ -21,12 +21,12 @@ export const TaxiItem = ({from, to, driveAt, description, cost, car}: Props) => 
 	return (
 		<a
 			href="#"
-			className="flex flex-col sm:flex-row w-full my-4 p-4 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 transition-colors duration-200"
+			className="flex flex-row w-full my-2 p-2 gap-4 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 transition-colors duration-200"
 		>
 			{/* Image - центрируем на мобильных */}
-			<div className="flex justify-center items-center sm:justify-start mb-4 sm:mb-0 sm:mr-4">
+			<div className="flex">
 				<img
-					className=" h-auto max-w-2xs sm:max-w-32 sm:h-32 object-cover rounded-md"
+					className=" h-auto max-w-32 object-cover rounded-md"
 					src={camry}
 					alt="Toyota Camry"
 				/>
