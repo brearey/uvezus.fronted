@@ -20,13 +20,13 @@ Design and business logic here: https://www.figma.com/design/PbD6hdxqIEycA1iRWVA
 - [ ] useInput hook
 - [ ] Setup GitHub actions
 
-- [ ] Send package. Do layout checkbox
-- [ ] Add from address label in taxi-list-screen.tsx
-- [ ] Add to address label in taxi-list-screen.tsx
-- [ ] Create .env and install `dotenv`
-- [ ] Add `SERVER_URL` parameter
+- [x] Send package. Do layout checkbox
+- [x] Add from address label in taxi-list-screen.tsx
+- [x] Add to address label in taxi-list-screen.tsx
+- [x] Create .env file
+- [x] Add `VITE_SERVER_URL` parameter
 - [x] Bug in splash screen and email screen. All in the not center
-- [ ] Sergey: decrease image size in mobile as desktop
+- [x] Sergey: decrease image size in mobile as desktop
 - [ ] Add time diapason for example 07:00 - 07:30
 - [ ] Delete prompts
 

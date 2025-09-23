@@ -1,6 +1,8 @@
 import axios from 'axios'
-import { ROUTES } from '../util/routes'
+
+const serverUrl = import.meta.env.VITE_SERVER_URL || 'http://localhost:3002'
+const baseURL = serverUrl + '/api'
 
 export const api = axios.create({
-	baseURL: ROUTES.baseURL,
+	baseURL: baseURL,
 })
