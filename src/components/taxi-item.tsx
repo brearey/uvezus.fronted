@@ -26,7 +26,7 @@ export const TaxiItem = ({from, to, driveAt, description, cost, car}: Props) => 
 			{/* Image - центрируем на мобильных */}
 			<div className="flex">
 				<img
-					className=" h-auto max-w-32 object-cover rounded-md"
+					className="max-w-32 sm:max-w-64 md:max-w-2xs object-scale-down object-top sm:object-cover"
 					src={camry}
 					alt="Toyota Camry"
 				/>

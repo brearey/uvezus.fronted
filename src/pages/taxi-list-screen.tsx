@@ -87,7 +87,7 @@ export function TaxiListScreen() {
 	const lineThrough = packageChecked ? 'line-through' : ''
 
 	return (
-		<div className="sm:max-w-1/2 container mx-auto p-2 select-none">
+		<div className="w-full xl:max-w-1/2 container mx-auto p-2 select-none">
 			{/* header */}
 			<div className="mb-2 flex flex-col items-center">
 				<div>
