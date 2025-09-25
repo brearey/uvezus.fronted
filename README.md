@@ -30,6 +30,17 @@ Design and business logic here: https://www.figma.com/design/PbD6hdxqIEycA1iRWVA
 - [ ] Add time diapason for example 07:00 - 07:30
 - [ ] Delete prompts
 
+# Run in prod with `nginx`
+1. 
+```bash
+npm run build
+```
+
+2. 
+```bash
+sudo rm -r /home/www/* && sudo cp -r uvezus.fronted/dist/* /home/www/.
+```
+
 ## Packages
 npm i -g serve `serve dist`
 
