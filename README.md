@@ -38,7 +38,7 @@ npm run build
 
 2. 
 ```bash
-sudo rm -r /home/www/* && sudo cp -r uvezus.fronted/dist/* /home/www/.
+sudo rm -r /home/www/* && sudo cp -r /home/lorriant/uvezus.fronted/dist/* /home/www/.
 ```
 
 ## Packages
