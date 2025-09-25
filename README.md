@@ -30,5 +30,8 @@ Design and business logic here: https://www.figma.com/design/PbD6hdxqIEycA1iRWVA
 - [ ] Add time diapason for example 07:00 - 07:30
 - [ ] Delete prompts
 
+## Packages
+npm i -g serve `serve dist`
+
 ### Icons
 #### Free classic solid [Fontawesome](https://fontawesome.com/search?f=classic&s=solid&ic=free&o=r)
