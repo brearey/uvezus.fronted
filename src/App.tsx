@@ -9,7 +9,6 @@ import { ROUTES } from './util/routes'
 const queryClient = new QueryClient()
 
 function App() {
-  console.log('ENV variables:', process.env);
 	return (
 		<QueryClientProvider client={queryClient}>
 			<BrowserRouter>
