@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { logger } from '../util/logger'
 
-const serverUrl = import.meta.env.VITE_SERVER_URL || 'https://lorriant.ru'
+const serverUrl = import.meta.env.VITE_SERVER_URL || 'http://localhost:3002'
 logger.info(`serverUrl = ${serverUrl}`)
 const baseURL = serverUrl + '/api'
 
