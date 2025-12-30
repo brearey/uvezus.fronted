@@ -5,7 +5,7 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite --host",
-		"build": "rm -rf dist/ && rm -rf node_modules/.vite/ && rm -rf .tsbuildinfo && tsc -b --force && vite build --force",
+		"build": "rm -rf dist/ && rm -rf node_modules/.vite/ && rm -rf .tsbuildinfo && tsc -b && vite build",
 		"lint": "eslint .",
 		"preview": "vite preview",
 		"format": "prettier --log-level warn --cache --write '{src/**/*,*}.{ts,tsx,js,jsx,json,yml,scss}' '!**{node_modules,dist}/**/*'"
