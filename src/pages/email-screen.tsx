@@ -9,7 +9,6 @@ import { useEmail } from '../http/useEmail'
 import { useVerify } from '../http/useVerify'
 import { ROUTES } from '../util/routes'
 import { validateEmail } from '../util/email'
-import { logger } from '../util/logger'
 import uvezusLogo from '../assets/logo.svg'
 
 const TIMER_SECONDS = 60
@@ -68,9 +67,7 @@ export function EmailScreen() {
 		codeVerifyMutation.mutate(
 			{ email: emailInput.value, code: codeInput.value },
 			{
-				onSuccess: (response) => {
-					logger.info(response.data)
-					toast.success('Код прошел проверку на сервере')
+				onSuccess: () => {
 					navigate(ROUTES.taxiList)
 				},
 				onError: (error) => {
