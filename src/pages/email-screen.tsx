@@ -78,7 +78,7 @@ export function EmailScreen() {
 					htmlFor="email"
 					className="block text-sm font-medium text-gray-700 mb-2"
 				>
-					{import.meta.env.VITE_SERVER_URL}Введите вашу почту:
+					Введите вашу почту:
 				</label>
 				<input
 					id="email"

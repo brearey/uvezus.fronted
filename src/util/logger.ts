@@ -5,6 +5,8 @@ export const logger = {
 		logger.instance.info(`${logger.now} | INFO | ${message}`)
 	},
 	error: (error: Error) => {
-		logger.instance.error(`${logger.now} | ERROR | ${error.name} ${error.message}`)
+		logger.instance.error(
+			`${logger.now} | ERROR | ${error.name} ${error.message}`
+		)
 	},
 }

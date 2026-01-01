@@ -175,7 +175,7 @@ export function TaxiListScreen() {
 				car={{
 					imageUrl: camry,
 					model: 'Toyota Camry',
-					number: 'О297КЕ'
+					number: 'О297КЕ',
 				}}
 			/>
 
@@ -188,7 +188,7 @@ export function TaxiListScreen() {
 				car={{
 					imageUrl: camry,
 					model: 'Toyota Camry',
-					number: 'О297КЕ'
+					number: 'О297КЕ',
 				}}
 			/>
 
@@ -201,7 +201,7 @@ export function TaxiListScreen() {
 				car={{
 					imageUrl: camry,
 					model: 'Toyota Camry',
-					number: 'О297КЕ'
+					number: 'О297КЕ',
 				}}
 			/>
 		</div>

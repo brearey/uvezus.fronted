@@ -9,15 +9,22 @@ import { City, type Car } from '../types/types'
 import camry from '../assets/camry-one-love.webp'
 
 type Props = {
-	from: City,
-	to: City,
-	driveAt: Date,
-	description: string | null,
-	cost: number,
+	from: City
+	to: City
+	driveAt: Date
+	description: string | null
+	cost: number
 	car: Car
 }
 
-export const TaxiItem = ({from, to, driveAt, description, cost, car}: Props) => {
+export const TaxiItem = ({
+	from,
+	to,
+	driveAt,
+	description,
+	cost,
+	car,
+}: Props) => {
 	return (
 		<a
 			href="#"
@@ -47,12 +54,11 @@ export const TaxiItem = ({from, to, driveAt, description, cost, car}: Props) => 
 				{/* Детали */}
 				<div className="space-y-2 text-sm sm:text-base">
 					<p className="font-normal text-gray-700">
-						Увезу в {to} в <FontAwesomeIcon icon={faClock} className="w-4" />{`${driveAt.getHours()}:${driveAt.getMinutes()}`}
+						Увезу в {to} в <FontAwesomeIcon icon={faClock} className="w-4" />
+						{`${driveAt.getHours()}:${driveAt.getMinutes()}`}
 					</p>
 
-					<p className="font-normal text-gray-700">
-						{description}
-					</p>
+					<p className="font-normal text-gray-700">{description}</p>
 
 					<p className="font-medium text-gray-700">
 						<FontAwesomeIcon icon={faCoins} className="w-4 mr-2" />

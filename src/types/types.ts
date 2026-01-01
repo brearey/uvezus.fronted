@@ -2,11 +2,11 @@ export enum City {
 	ykt = 'Якутск',
 	oktem = 'Октемцы',
 	chapaevo = 'Чапаево',
-	tehtur = 'Техтюр'
+	tehtur = 'Техтюр',
 }
 
 export type Car = {
-	imageUrl: string,
-	model: string,
-	number: string,
+	imageUrl: string
+	model: string
+	number: string
 }
