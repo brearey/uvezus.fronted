@@ -6,6 +6,7 @@ import { useTimer } from '@siberiacancode/reactuse'
 import { useDebounce } from '../hooks/use-debounce'
 import { useInput } from '../hooks/use-input'
 import { useEmail } from '../http/useEmail'
+import { useVerify } from '../http/useVerify'
 import { ROUTES } from '../util/routes'
 import { validateEmail } from '../util/email'
 import { logger } from '../util/logger'
@@ -24,6 +25,12 @@ export function EmailScreen() {
 	const debouncedSignIn = useDebounce(setSignInBtnDisabled, 300)
 	const getCodeMutation = useEmail(
 		() => toast.success('Код отправлен на вашу почту'),
+		(e) => {
+			toast.error(e instanceof AxiosError ? e.message : 'Что-то пошло не так')
+		}
+	)
+	const codeVerifyMutation = useVerify(
+		() => toast.success('Код прошел проверку на сервере'),
 		(e) => {
 			toast.error(e instanceof AxiosError ? e.message : 'Что-то пошло не так')
 		}
@@ -58,17 +65,25 @@ export function EmailScreen() {
 	}
 
 	function signIn() {
-    //TODO: debug
-    logger.info(`codeInput.value ${codeInput.value}`)
-    logger.info(`getCodeMutation ${JSON.stringify(getCodeMutation)}`)
-
-		if (codeInput.value == getCodeMutation.data?.data?.code) {
-			navigate(ROUTES.taxiList)
-		} else {
-			setSignInBtnDisabled(true)
-			codeInput.reset()
-			toast.error('Ваш код неверный')
-		}
+		codeVerifyMutation.mutate(
+			{ email: emailInput.value, code: codeInput.value },
+			{
+				onSuccess: (response) => {
+					logger.info(response.data)
+					toast.success('Код прошел проверку на сервере')
+					navigate(ROUTES.taxiList)
+				},
+				onError: (error) => {
+					setSignInBtnDisabled(true)
+					codeInput.reset()
+					toast.error(
+						error instanceof AxiosError
+							? error.response?.data?.message || error.message
+							: 'Ваш код неверный'
+					)
+				},
+			}
+		)
 	}
 
 	return (
