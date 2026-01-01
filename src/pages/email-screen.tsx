@@ -8,6 +8,7 @@ import { useInput } from '../hooks/use-input'
 import { useEmail } from '../http/useEmail'
 import { ROUTES } from '../util/routes'
 import { validateEmail } from '../util/email'
+import { logger } from '../util/logger'
 import uvezusLogo from '../assets/logo.svg'
 
 const TIMER_SECONDS = 60
@@ -57,6 +58,10 @@ export function EmailScreen() {
 	}
 
 	function signIn() {
+    //TODO: debug
+    logger.info(`codeInput.value ${codeInput.value}`)
+    logger.info(`getCodeMutation ${JSON.stringify(getCodeMutation)}`)
+
 		if (codeInput.value == getCodeMutation.data?.data?.code) {
 			navigate(ROUTES.taxiList)
 		} else {
