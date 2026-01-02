@@ -1,7 +1,9 @@
+import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faCube, faA, faB } from '@fortawesome/free-solid-svg-icons'
 import { toast } from 'react-toastify'
 import { TaxiItem } from '../components/taxi-item'
+import { Modal } from '../components/modal'
 import { useLocalStorage } from '../hooks/use-storage'
 import { isValidPassengersCount, isValidAddress } from '../util/validators'
 import { City } from '../types/types'
@@ -23,11 +25,18 @@ export function TaxiListScreen() {
 		'packageChecked',
 		false
 	)
+	const [fromModalOpen, setFromModalOpen] = useState(false)
+	const [fromTemp, setFromTemp] = useState(fromAddress)
 
 	const openFromAddressModal = () => {
-		const temp = prompt('Введите ваш адрес', fromAddress)
-		if (temp && isValidAddress(temp)) {
-			setFromAddress(temp)
+		setFromTemp(fromAddress)
+		setFromModalOpen(true)
+	}
+
+	const saveFromAddress = () => {
+		if (isValidAddress(fromTemp)) {
+			setFromAddress(fromTemp)
+			setFromModalOpen(false)
 		} else {
 			toast.warn('Введите корректный адрес')
 		}
@@ -204,6 +213,28 @@ export function TaxiListScreen() {
 					number: 'О297КЕ',
 				}}
 			/>
+
+			<Modal
+				isOpen={fromModalOpen}
+				title="Адрес отправления"
+				onClose={() => setFromModalOpen(false)}
+			>
+				<div className="flex flex-col gap-3">
+					<input
+						value={fromTemp}
+						onChange={(e) => setFromTemp(e.target.value)}
+						placeholder="Введите адрес"
+						className="w-full rounded-md border px-3 py-2 text-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+					/>
+
+					<button
+						onClick={saveFromAddress}
+						className="self-end rounded-md bg-blue-600 px-4 py-2 text-sm text-white hover:bg-blue-700"
+					>
+						Сохранить
+					</button>
+				</div>
+			</Modal>
 		</div>
 	)
 }
